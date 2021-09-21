@@ -1,0 +1,236 @@
+﻿<Window x:Class="DrawShape.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="DrawKnitting" Height="717" Width="969" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" WindowStyle="ThreeDBorderWindow" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TabControl Grid.Row="0" Height="80" Background="LightBlue">
+            <TabItem Header="Home">
+                <ToolBar>
+                    <Button x:Name="btnNew" ToolTip="New file" Click="btnNew_Click">
+                        <Image Source="icons/NewFileIcon.png" RenderTransformOrigin="0.5,0.514"/>
+                    </Button>
+                    <Button x:Name="btnOpen" ToolTip="Open file" Click="btnOpen_Click">
+                        <Image Source="icons/OpenFileIcon.png"/>
+                    </Button>
+                    <Button x:Name="btnSave" ToolTip="Save file" Click="btnSave_Click">
+                        <Image Source="icons/SaveFileIcon.png"/>
+                    </Button>
+                    <Separator />
+                </ToolBar>
+            </TabItem>
+            <TabItem Header="Templates">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="250"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <ToolBar Grid.Column="0">
+                        <Button x:Name="btnSockTemp" ToolTip="Cut Sock Template" Click="btnSockTemp_Click" Content="Socks"/>
+                        <Separator></Separator>
+                        <Button x:Name="btnDeleteTemp" ToolTip="Delete Template" Margin="5,0,0,0" Click="btnDeleteTemp_Click">
+                            <Image Source="icons/DeleteIcon.png"/>
+                        </Button>
+                    </ToolBar>
+
+                    <TextBlock Grid.Column="1" Text="Show Sizes:" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                    <CheckBox Grid.Column="1" x:Name="chShowSizes" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0" Checked="chShowSizes_Checked" Unchecked="chShowSizes_Unchecked"></CheckBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Custom Draw" x:Name="customDraw">
+                <ToolBar>
+                    <RadioButton x:Name="rbDrawLine"
+                                    IsChecked="False"
+                                    ToolTip="Draw Line"
+                                    GroupName="DrawShape" Checked="drawShapeGroupChecked">
+                        <Line X1="0" Y1="0" X2="30" Y2="30" Stroke="Black" StrokeThickness="3"/>
+                    </RadioButton>
+                    <RadioButton x:Name="rbDrawPolyLine"
+                                 IsChecked="False"
+                                 ToolTip="Draw PolyLine"
+                                 Checked="drawShapeGroupChecked"
+                                 GroupName="DrawShape">
+                        <Polyline Stroke="Black" StrokeThickness="3"
+                                 Points="1 25,10 0,20 20,30 0,40 25"/>
+                    </RadioButton>
+                    <RadioButton x:Name="rbDrawSquare"
+                                    IsChecked="False"
+                                    ToolTip="Draw Square"
+                                    GroupName="DrawShape" Checked="drawShapeGroupChecked">
+                        <Rectangle Height="30" Width="30" Stroke="Black" StrokeThickness="3"/>
+                    </RadioButton>
+                    <RadioButton x:Name="rbDrawRectangle"
+                                    IsChecked="False"
+                                    ToolTip="Draw Rectangle"
+                                    GroupName="DrawShape"
+                                    Checked="drawShapeGroupChecked">
+                        <Rectangle Height="30" Width="50" Stroke="Black" StrokeThickness="3"/>
+                    </RadioButton>
+                    <RadioButton x:Name="rbDrawPolygon"
+                                 IsChecked="False"
+                                 ToolTip="Draw Polygon"
+                                 Checked="drawShapeGroupChecked"
+                                 GroupName="DrawShape">
+                        <Polyline Stroke="Black" StrokeThickness="3"
+                                 Points="1 25,10 0,20 15,30 0,40 25,1 25"/>
+                    </RadioButton>
+                    <RadioButton x:Name="rbDrawArc"
+                                    IsChecked="False"
+                                    ToolTip="Draw Arc"
+                                    Checked="drawShapeGroupChecked"
+                                    GroupName="DrawShape">
+                        <Path Stroke="Black" StrokeThickness="3" Height="26.418" Stretch="Fill" Width="48.866">
+                            <Path.Data>
+                                <PathGeometry>
+                                    <PathGeometry.Figures>
+                                        <PathFigureCollection>
+                                            <PathFigure StartPoint="0,10">
+                                                <PathFigure.Segments>
+                                                    <PathSegmentCollection>
+                                                        <ArcSegment Size="10,10" RotationAngle="0"
+                                                            IsLargeArc="True"
+                                                            SweepDirection="Clockwise"
+                                                            Point="10,10" />
+                                                    </PathSegmentCollection>
+                                                </PathFigure.Segments>
+                                            </PathFigure>
+                                        </PathFigureCollection>
+                                    </PathGeometry.Figures>
+                                </PathGeometry>
+                            </Path.Data>
+                        </Path>
+                    </RadioButton>
+                    <RadioButton x:Name="rbDrawCircle"
+                                    IsChecked="False"
+                                    ToolTip="Draw Circle"
+                                    GroupName="DrawShape"
+                                    Checked="drawShapeGroupChecked">
+
+                        <Ellipse Width="30" Height="30" Stroke="Black" StrokeThickness="3"/>
+                    </RadioButton>
+                    <RadioButton x:Name="rbDrawEllipse"
+                                    IsChecked="False"
+                                    ToolTip="Draw Ellipse"
+                                    GroupName="DrawShape"
+                                    Checked="drawShapeGroupChecked">
+                        <Ellipse Width="40" Height="25" Stroke="Black" StrokeThickness="3"/>
+                    </RadioButton>
+                    <Separator Margin="5,5,5,5"/>
+                    <Label Content="Size:" ToolTip="Stroke Thickness" Margin="0,8,0,5"/>
+                    <Border>
+                        <ComboBox x:Name="comboBoxSize" Width="50" Margin="0,11,0,12" ToolTip="Stroke Thickness">
+                            <ComboBoxItem IsSelected="True">1</ComboBoxItem>
+                            <ComboBoxItem>2</ComboBoxItem>
+                            <ComboBoxItem>3</ComboBoxItem>
+                            <ComboBoxItem>4</ComboBoxItem>
+                            <ComboBoxItem>5</ComboBoxItem>
+                            <ComboBoxItem>6</ComboBoxItem>
+                            <ComboBoxItem>7</ComboBoxItem>
+                            <ComboBoxItem>8</ComboBoxItem>
+                            <ComboBoxItem>9</ComboBoxItem>
+                            <ComboBoxItem>10</ComboBoxItem>
+                        </ComboBox>
+                    </Border>
+                    <Separator Margin="5,5,5,5"/>
+                    <Label Content="Stroke" ToolTip="Stroke Color" Margin="0,8,0,5"/>
+                    <Button Click="btnStrokeColor_Click" Background="Transparent" ToolTip="Stroke Color">
+                        <Rectangle x:Name="rectStrokeColor" Height="30" Width="30" Stroke="Black" StrokeThickness="2" Fill="Black"/>
+                    </Button>
+                    <Label Content="Fill" ToolTip="Fill Color" Margin="0,8,0,5"/>
+                    <Button Click="btnFillColor_Click" Background="Transparent" ToolTip="Fill Color">
+                        <Rectangle x:Name="rectFillColor" Height="30" Width="30" Stroke="Black" StrokeThickness="2" Fill="Gray"/>
+                    </Button>
+                    <Separator Margin="5,5,5,5"/>
+                    <RadioButton x:Name="rbSelect" ToolTip="Select Shape" IsChecked="False" Checked="transformGroup_Checked" GroupName="TransformGroup">
+                        <Image Source="icons/SelectIcon.png"/>
+                    </RadioButton>
+                    <RadioButton x:Name="rbMove" ToolTip="Move Shape" IsChecked="False" Checked="transformGroup_Checked" GroupName="TransformGroup">
+                        <Image Source="icons/MoveIcon.png"/>
+                    </RadioButton>
+                    <Button x:Name="btnDelete" ToolTip="Delete shape" Click="btnDelete_Click">
+                        <Image Source="icons/DeleteIcon.png"/>
+                    </Button>
+                    <Separator Margin="5,5,5,5"/>
+                </ToolBar>
+            </TabItem>
+            <TabItem Header="View">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="350"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <ToolBar Grid.Column="0">
+                        <Label Content="Zoom" VerticalAlignment="Center"/>
+                        <Slider x:Name="sliderZoom" Minimum="0.4" Maximum="5" TickFrequency="0.2" Value ="1" TickPlacement="BottomRight" IsSnapToTickEnabled="True" Width="200" VerticalAlignment="Center" HorizontalAlignment="Left" ValueChanged="sliderZoom_ValueChanged"/>
+                        <TextBox x:Name="tbZoom" Width="50" TextAlignment="Center" VerticalAlignment="Center" Text="100%"></TextBox>
+                    </ToolBar>
+                    <TextBlock Grid.Column="1" Text="Show Grid:" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                    <CheckBox Grid.Column="1" x:Name="chShowGrid" VerticalAlignment="Center" HorizontalAlignment="Right" Checked="chShowGrid_Checked" Unchecked="chShowGrid_Unchecked" ></CheckBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Arc Design" x:Name="arcDesign" Visibility="Collapsed" Focusable="True">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="24"/>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="90"/>
+                        <ColumnDefinition Width="50"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Height:" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Width:" VerticalAlignment="Center"/>
+                    <TextBox x:Name="arcHeight" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Text="50"/>
+                    <TextBox x:Name="arcWidth" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Text="50"/>
+                    <TextBlock Grid.Row="0" Grid.Column="3" Text="Angle:" VerticalAlignment="Center"/>
+                    <TextBox x:Name="arcAngle" Grid.Row="0" Grid.Column="4" VerticalAlignment="Center" Text="0"/>
+                    <TextBlock Grid.Row="0" Grid.Column="6" Text="IsLargeArc:" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Row="1" Grid.Column="6" Text="SweepDirection:" VerticalAlignment="Center"/>
+                    <CheckBox x:Name ="isLargeArc" Grid.Row="0" Grid.Column="7" VerticalAlignment="Center"/>
+                    <ComboBox x:Name="arcSweepDirection" Grid.Row="1" Grid.Column="7" VerticalAlignment="Center" Margin="0,1,-91,1">
+                        <ComboBoxItem Content="Clockwise" IsSelected="True"/>
+                        <ComboBoxItem Content="CounterClockWise"/>
+                    </ComboBox>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <StackPanel Grid.Row="1">
+            <Border  
+                BorderBrush="Black"
+                BorderThickness="1" 
+                HorizontalAlignment="Left"  VerticalAlignment="Top"  Background="Gray" Height="600" Width="953">
+                <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Margin="0,0,0,4">
+                    <Canvas 
+                        Name="canvas1"  
+                        Width="941" 
+                        Height="578"
+                        HorizontalAlignment="Left"  VerticalAlignment="Top"
+                        MouseLeftButtonDown="canvas1_MouseLeftButtonDown"
+                        MouseLeftButtonUp="canvas1_MouseLeftButtonUp"
+                        MouseMove="canvas1_MouseMove" 
+                        MouseRightButtonUp="canvas1_MouseRightButtonUp"
+                        Background="White" ClipToBounds="True">
+                        <Canvas.Effect>
+                            <DropShadowEffect/>
+                        </Canvas.Effect>
+                    </Canvas>
+                </ScrollViewer>
+            </Border>
+        </StackPanel>
+    </Grid>
+</Window>

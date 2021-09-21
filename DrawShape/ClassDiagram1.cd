@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DrawShape.App" Collapsed="true">
+    <Position X="11.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DrawShape.MainWindow" Collapsed="true">
+    <Position X="12.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>gAAgCcgcADARAAAGEECAQCEQYCIpABAAAAADCEEFYQA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DrawShape.Messages">
+    <Position X="14.5" Y="0.5" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAABACAAIA=</HashCode>
+      <FileName>Messages.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DrawShape.ArcShapes" Collapsed="true">
+    <Position X="8.75" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAECAAAABgAABAAAAAAAAEAABAAAAAAQAFAAAAAAAAA=</HashCode>
+      <FileName>MyShapes\ArcShapes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DrawShape.CircleShapes" Collapsed="true">
+    <Position X="9" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>MyShapes\CircleShapes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DrawShape.EllipseShapes" Collapsed="true">
+    <Position X="6" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>MyShapes\EllipseShapes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DrawShape.LineShapes" Collapsed="true">
+    <Position X="5.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>MyShapes\LineShapes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DrawShape.MyShapes">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAACABTAAAgCAAJAEAAAAAAAGAABAAAAAAAAg=</HashCode>
+      <FileName>MyShapes\MyShapes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DrawShape.PolygonShapes" Collapsed="true">
+    <Position X="8.75" Y="3" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAABAAACAAAAAAIAAAAAAAAAJAAAAAAAAA=</HashCode>
+      <FileName>MyShapes\PolygonShapes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DrawShape.PolyLineShapes" Collapsed="true">
+    <Position X="9.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAABAAAAAAAAQAAAAAAAAAAABIAAAAAAIA=</HashCode>
+      <FileName>MyShapes\PolyLineShapes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DrawShape.RectangleShapes" Collapsed="true">
+    <Position X="5.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>MyShapes\RectangleShapes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DrawShape.SquareShapes" Collapsed="true">
+    <Position X="5.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>MyShapes\SquareShapes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DrawShape.SockTemp" Collapsed="true">
+    <Position X="16.5" Y="1.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>MBAAAEAAAAAAAAAAgQAAAgAAAACAAAJgAEAAAAgAAAA=</HashCode>
+      <FileName>SockTemp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DrawShape.WindowSockTemp">
+    <Position X="13" Y="2.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAACAAAAAAACIEAAAAAAAAAAAAAQCAQCAA=</HashCode>
+      <FileName>WindowSockTemp.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DrawShape.Properties.Resources" Collapsed="true">
+    <Position X="11.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQABAAAAAAAAAAAEAEJEAAEAwAAgBAAAAAAIAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DrawShape.Properties.Settings" Collapsed="true">
+    <Position X="13" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
